@@ -1,0 +1,4 @@
+server/config/configuration.json
+client/bower_components
+node_modules
+*.sln
