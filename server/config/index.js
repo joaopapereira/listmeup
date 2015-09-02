@@ -4,5 +4,6 @@ var path = require('path');
 module.exports = {
   configuration: config,
   database: config["database"],
-  root: path.normalize(__dirname + '/../..')
+  root: path.normalize(__dirname + '/../..'),
+  secrets: config["secrets"]
 };

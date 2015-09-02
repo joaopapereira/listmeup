@@ -8,20 +8,22 @@ module.exports = function(config){
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'components/**/*.js',
-      'view*/**/*.js'
+      'view*/**/*.js',
+      'server/specs/**/*.spec.js'
     ],
 
     autoWatch : true,
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome'],
+    browsers : ['PhantomJS'],
 
     plugins : [
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
-            'karma-junit-reporter'
+            'karma-junit-reporter',
+            'karma-phantomjs-launcher'
             ],
 
     junitReporter : {

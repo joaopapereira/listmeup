@@ -4,5 +4,8 @@
     "user": "",
     "password": "",
     "name": ""
+  },
+  "secrets": {
+    "session": ""
   }
 }
