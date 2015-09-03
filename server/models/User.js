@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var crypto = require('crypto');
+var authTypes = ['twitter', 'facebook', 'google'];
 
 var UserSchema = new mongoose.Schema({
     name: String,
