@@ -20,21 +20,14 @@ var user1 = new User({
 });
 
 
-describe('Create User', function() {
+/*describe('Create User', function() {
   beforeAll(function(done) {
-    // Clear users before testing
-    user.save(function() {
-      done();
-    });
   });
 
   afterAll(function(done) {
-    User.remove().exec().then(function() {
-      done();
-    });
   });
 
   it('should create a new user', function(done) {
 
   });
-});
+});*/
