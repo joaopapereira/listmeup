@@ -11,8 +11,6 @@ var errorHandler = require('errorhandler');
 
 var config = require('./config');
 
-var users = require('./routes/users');
-
 var errors = require('./components/errors');
 
 
@@ -42,7 +40,9 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(cookieParser());
 
-app.use('/users', users);
+app.use('/users', require('./routes/users'));
+
+app.use('/auth', require('./services/auth'));
 
 // catch 404 and forward to error handler
 /*app.use(function (req, res, next) {
