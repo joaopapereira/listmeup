@@ -43,6 +43,7 @@ app.use(cookieParser());
 app.use('/users', require('./routes/users'));
 
 app.use('/auth', require('./services/auth'));
+app.use('/lists', require('./routes/ListRoutes'));
 
 // catch 404 and forward to error handler
 /*app.use(function (req, res, next) {
