@@ -10,11 +10,11 @@ var item = new ListItem({
   description: "my description"
 });
 var allItems = [
-  ListItem({
+  new ListItem({
     name: "Bear",
     description: "Because is brown and big"
   }),
-  ListItem({
+  new ListItem({
     name: "Fluffy",
     description: "To much fur"
   })
@@ -27,7 +27,7 @@ var list1 = new List({
 list1.items = allItems;
 
 describe('List Model', function() {
-  beforeAll(function(done) {
+  before(function(done) {
     // Clear users before testing
     List.remove().exec().then(function() {
       done();

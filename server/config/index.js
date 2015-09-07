@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
   configuration: config,
-  database: config["database"],
+  database: config.database,
   root: path.normalize(__dirname + '/../..'),
-  secrets: config["secrets"]
+  secrets: config.secrets
 };

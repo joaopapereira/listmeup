@@ -14,10 +14,15 @@ var config = require('./config');
 var errors = require('./components/errors');
 
 
-console.log('Configuration: ' + config.database["url"]);
+console.log('Configuration: ' + config.database.url);
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://'+ config.database["user"] + ':' + config.database["password"] + '@' + config.database["url"] + '/' + config.database["name"], function (err) {
+var uri = "mongodb://";
+if(config.database.user !== undefined) 
+   uri += config.database.user + ':' + config.database.password + '@' + config.database.url + '/' + config.database.name
+else
+   uri += config.database.url + '/' + config.database.name
+mongoose.connect(uri, function (err) {
     if (err) {
         console.log('connection error', err);
     } else {
@@ -39,8 +44,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(cookieParser());
-
-//app.use(express.static(__dirname + '/../client/bower_components'));
 
 app.use('/users', require('./routes/users'));
 
@@ -86,6 +89,13 @@ app.route('/*')
   .get(function(req, res) {
     res.sendFile('/index.html', {root: app.get('appPath')});
   });
+
+var server = app.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+});
 
 if ('production' === env) {
   app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));

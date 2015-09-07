@@ -34,7 +34,7 @@ exports.createUpdate = function(req, res, next) {
   var userId = req.user._id;
   User.findById(userId, function (err, user) {
     if(err) {
-      create(req, res, next);
+      exports.create(req, res, next);
     } else {
       user.name = req.user.name;
     }

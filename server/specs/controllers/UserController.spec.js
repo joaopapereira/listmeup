@@ -3,7 +3,7 @@
 var should = require('should');
 var app = require('../../app');
 var User = require('../../models/User');
-var UserController = require('../../controllers/User');
+var UserController = require('../../controllers/user');
 
 var user = new User({
   provider: 'local',
