@@ -40,6 +40,8 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(cookieParser());
 
+//app.use(express.static(__dirname + '/../client/bower_components'));
+
 app.use('/users', require('./routes/users'));
 
 app.use('/auth', require('./services/auth'));
@@ -56,7 +58,7 @@ app.use('/lists', require('./routes/ListRoutes'));
 
 // development error handler
 // will print stacktrace
-/*if (app.get('env') === 'development') {
+if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
@@ -64,17 +66,17 @@ app.use('/lists', require('./routes/ListRoutes'));
             error: err
         });
     });
-}*/
+}
 
 // production error handler
 // no stacktraces leaked to user
-/*app.use(function (err, req, res, next) {
+app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
         error: {}
     });
-});*/
+});
 // All undefined asset or api routes should return a 404
 app.route('/:url(api|auth|components|app|bower_components|assets)/*')
  .get(errors[404]);
