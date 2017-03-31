@@ -1,0 +1,28 @@
+.listsListItem {
+  list-style: none;
+  padding: 20px 10px 20px 60px;
+  background-color: white;
+  border-bottom: 1px solid #E3E3E3;
+  display: flex;
+}
+
+.listInfos {
+  flex: 1 0 auto;
+}
+
+.listInfos span {
+  font-weight: bold;
+}
+
+.listActions {
+  flex: 0 0 90px;
+}
+
+.btnAction, .btnAction:active, .btnAction:focus, .btnAction:hover {
+  margin-right: 5px;
+  color: #5C75B0;
+}
+
+button:focus {
+  outline: 0 !important;
+}
